@@ -1,11 +1,17 @@
 "user strict";
 
+
+
 window.onload = function init() {
     const estimateButton = document.getElementById("estimateButton");
 
     estimateButton.onclick = estimateTotalCost;
 
+    
+
+    
 }
+
 
 function estimateTotalCost() {
     const pickupDate = document.getElementById("pickupDateInput");
@@ -23,9 +29,9 @@ function estimateTotalCost() {
     const under25totalTD = document.getElementById("under25totalTD");
     const totalDueTD = document.getElementById("totalDueTD");
 
+    
 
-
-    const carRental = 30;
+    const carRental = 29.99;
 
     let carRentalTotal = carRental * numberOfDays;
     carTotalTD.innerText = carRentalTotal;
@@ -43,7 +49,7 @@ function estimateTotalCost() {
         optionPerday += 3.95;
     }
 
-    let optionsTotal = optionPerday * numberOfDays
+    let optionsTotal = optionPerday * numberOfDays;
     
     optionsTotalTD.innerText = optionsTotal;
 
@@ -52,8 +58,7 @@ function estimateTotalCost() {
     if(under25Yes) {
         underAgeTotal +=  carRental * 0.3;
     }
-
-    
+ 
     under25totalTD.innerText = underAgeTotal
 
     let totalDue = carRentalTotal + optionsTotal + underAgeTotal;
@@ -61,12 +66,18 @@ function estimateTotalCost() {
     totalDueTD.innerText = totalDue;
 
 
+    const displayTable = document.getElementById("displayTable");
+
+    if (displayTable.style.display === "none") {
+        displayTable.style.display = "block";
+    } else {
+        displayTable.style.display = "none";
+    }
+   
+
+}; 
 
 
-
-
-
-};
 
 
 

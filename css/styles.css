@@ -7,3 +7,8 @@
   .totals {
     width: 17rem;
   }
+
+
+  #displayTable {
+    display: none;
+  }
