@@ -5,6 +5,9 @@
 window.onload = function init() {
     const estimateButton = document.getElementById("estimateButton");
 
+    const pickupDate = document.getElementById("pickupDateInput");
+    pickupDate.min = new Date().toISOString().split("T")[0];
+
     estimateButton.onclick = estimateTotalCost;
 
     
@@ -29,7 +32,6 @@ function estimateTotalCost() {
     const under25totalTD = document.getElementById("under25totalTD");
     const totalDueTD = document.getElementById("totalDueTD");
 
-    
 
     const carRental = 29.99;
 
